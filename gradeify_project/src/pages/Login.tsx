@@ -1,18 +1,22 @@
 import React from 'react';
 import Layout from '../components/Layout';
+import PrimaryButton from '../components/PrimaryButton';
 
 const Login: React.FC = () => {
   return (
     <Layout>
       <div style={styles.container}>
         <div style={styles.form}>
-          <label style={styles.label}>Email</label>
-          <input type="email" style={styles.input} />
-
-          <label style={styles.label}>Password</label>
-          <input type="password" style={styles.input} />
-
-          <a style={styles.link}>Create account</a>
+              <label style={styles.label}>Email</label>
+              <input type="email" style={styles.input} />
+      
+              <label style={styles.label}>Password</label>
+              <input type="password" style={styles.input} />
+              
+              <div style={styles.submit}>
+                <PrimaryButton text="Enter"></PrimaryButton>
+                <a style={styles.link}>create account</a>
+              </div>
         </div>
       </div>
     </Layout>
@@ -31,9 +35,10 @@ const styles: { [key: string]: React.CSSProperties } = {
   flexDirection: 'column',
   padding: '2rem',
   backgroundColor: '#585050',
-  borderRadius: 8,
+  borderRadius: 28,
   minWidth: '300px',
   width: '40%',
+  paddingLeft: '5rem'
   },  
   label: {
     fontFamily: "'Gurajada', sans-serif",
@@ -48,14 +53,20 @@ const styles: { [key: string]: React.CSSProperties } = {
     border: '1px solid #ccc',
     width: '70%',
     height: 40,
-  },  
+  },
+  submit: {  
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+  }, 
   link: {
-    marginTop: '1.5rem', // extra space before "create account"
-    fontSize: 14,
-    color: '#007bff',
+    fontFamily: "'Gurajada', sans-serif",
+    marginLeft: '1.5rem',
+    marginTop: '1.5rem',
+    fontSize: 64,
+    color: '#278CFF',
     cursor: 'pointer',
-    textDecoration: 'underline',
-  },  
+  },
 };
 
 export default Login;
